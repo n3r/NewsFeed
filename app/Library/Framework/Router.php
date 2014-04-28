@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Library\Framework;
+
 class Router
 {
 	public $action;

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Library\Framework;
+
 abstract class Database
 {
 	abstract protected function getNewsfeed($offset = false, $count = false);

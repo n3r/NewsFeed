@@ -1,8 +1,13 @@
 <?php
 
-// Подключаем и запускаем наше приложение
-require_once('app/app.php');
+require_once('app/config.php');
 
-$app = new Kernel();
+require_once 'app/autoloader.php';
+use Autoloader as Autoloader;
+
+require_once 'app/appKernel.php';
+use App\appKernel as appKernel;
+
+$app = new appKernel($config);
 
 $app->run();

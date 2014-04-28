@@ -1,18 +1,19 @@
 <?php
 
-class Kernel
+namespace App;
+
+use App\Library\Framework\Router as Router;
+use App\Library\Framework\Db\Mysql as Mysql;
+use App\Library\Framework\Db\File as File;
+
+class appKernel
 {
 	protected $router;
 	protected $config;
 	protected $db;
 
-	public function __construct()
+	public function __construct($config)
 	{
-		// Подключаем все необходимые конфиги и либы
-		require_once('config.php');
-		require_once('modules/Router.php');
-		require_once('modules/Database.php');
-
 		$this->config = $config;
 		$this->router = new Router();
 
@@ -20,14 +21,10 @@ class Kernel
 		switch ($this->config['data_storage']){
 			default:
 			case 'mysql':
-				require_once('modules/data/mysql.php');
-
 				// Создаем экземпляр класса работы с базой
 				$this->db = new Mysql($this->config);
 				break;
 			case 'file':
-				require_once('modules/data/file.php');
-
 				// Создаем экземпляр класса работы с базой
 				$this->db = new File($this->config);
 				break;

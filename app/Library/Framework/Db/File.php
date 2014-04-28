@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Library\Framework\Db;
+
+use App\Library\Framework\Database as Database;
+
 class File extends Database
 {
 	public $data;
