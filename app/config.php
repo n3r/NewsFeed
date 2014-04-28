@@ -1,5 +1,5 @@
 <?php
-$config['data_storage'] = 'file';
+$config['data_storage'] = 'mysql';
 
 $config['mysql']['host'] = 'localhost';
 $config['mysql']['username'] = 'root';
